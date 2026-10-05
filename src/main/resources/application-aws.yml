@@ -1,0 +1,20 @@
+aws:
+  region: ${AWS_REGION:us-east-1}
+  dynamodb-endpoint:
+  sqs-endpoint:
+  orders-queue-url: ${ORDERS_QUEUE_URL}
+
+ticketing:
+  reservation-expiration:
+    poll-ms: 30000
+  sqs:
+    poll-ms: 1000
+
+orders:
+  reservation-duration-minutes: 10
+
+
+logging:
+  level:
+    root: INFO
+    com.nequi.ticketing: INFO

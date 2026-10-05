@@ -1,0 +1,18 @@
+aws:
+  region: us-east-1
+  dynamodb-endpoint: http://localhost:8000
+  sqs-endpoint: http://localhost:4566
+  orders-queue-url: http://localhost:4566/000000000000/orders
+
+ticketing:
+  reservation-expiration:
+    poll-ms: 30000
+  sqs:
+    poll-ms: 1000
+orders:
+  reservation-duration-minutes: 10
+
+logging:
+  level:
+    root: INFO
+    com.nequi.ticketing: DEBUG
