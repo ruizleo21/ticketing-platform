@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "6bac7a1c-283a-450d-ba89-16457b669a19",
+    "name": "api nequi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4730685",
+    "_collection_link": "https://go.postman.co/collection/4730685-6bac7a1c-283a-450d-ba89-16457b669a19?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "create event",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Nequi Live\",\n  \"date\": \"2026-12-15T20:00:00Z\",\n  \"venue\": \"Bogota Arena\",\n  \"totalCapacity\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "events"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "create event",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Nequi Live\",\n  \"date\": \"2026-12-15T20:00:00Z\",\n  \"venue\": \"Bogota Arena\",\n  \"totalCapacity\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "events"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "147"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": {\n    \"value\": \"76b41d09-e383-4a21-bfa4-3f52eb0fd1bd\"\n  },\n  \"name\": \"Nequi Live\",\n  \"date\": \"2026-12-15T20:00:00Z\",\n  \"venue\": \"Bogota Arena\",\n  \"totalCapacity\": 10\n}"
+        }
+      ]
+    },
+    {
+      "name": "availability",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/events/1357f6aa-ee72-4e9c-8e2f-5249b6d7bed8/availability",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "events",
+            "1357f6aa-ee72-4e9c-8e2f-5249b6d7bed8",
+            "availability"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "8a6f-demo-001"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventId\": \"7c3d60cf-9e28-428a-aef2-6fb535b3c9f1\",\n  \"quantity\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "order status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders/064250ea-90d9-4220-a955-5ec9ebaa0502",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "064250ea-90d9-4220-a955-5ec9ebaa0502"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "confirmar orden",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders/064250ea-90d9-4220-a955-5ec9ebaa0502/confirm",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "064250ea-90d9-4220-a955-5ec9ebaa0502",
+            "confirm"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "event detail",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/events/76b41d09-e383-4a21-bfa4-3f52eb0fd1bd",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "events",
+            "76b41d09-e383-4a21-bfa4-3f52eb0fd1bd"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "available events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
